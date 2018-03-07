@@ -1,7 +1,7 @@
 const express = require('express');
 const basicAuth = require('express-basic-auth');
 var app = express();
-const Constants = require('./constants');
+//const Constants = require('./constants');
 
 app.use(basicAuth({
     users: { 'admin': 'secret'}
