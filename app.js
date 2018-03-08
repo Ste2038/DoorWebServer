@@ -4,8 +4,8 @@ var bodyParser = require('body-parser')
 var basicAuth = require('express-basic-auth');
 var app = express();
 var app1 = connect();
-process.env.DEBUG = 'actions-on-google:*';
-const App = require('actions-on-google').DialogflowApp;
+//process.env.DEBUG = 'actions-on-google:*';
+//const App = require('actions-on-google').DialogflowApp;
 //const Constants = require('./constants');
 const COSA_APRIRE_ARGUMENT = 'CosaAprire'
 
