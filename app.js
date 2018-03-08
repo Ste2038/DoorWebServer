@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
         }
     })
     */
-    console.log("Door Opened!");
+    console.log('Door Opened!');
 });
 
 app.listen(process.env.PORT || 3000, function () {
