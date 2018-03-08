@@ -5,6 +5,7 @@ var basicAuth = require('express-basic-auth');
 var app = express();
 var app1 = connect();
 //const Constants = require('./constants');
+const COSA_APRIRE_ARGUMENT = 'CosaAprire'
 
 app.use(basicAuth({
     users: { 'admin': 'secret'}
@@ -37,6 +38,9 @@ app.get('/', function (req, res) {
 app.post('/', function(req, res){
     console.log('POST /');
     res.send('Door Opened!');
+
+    let WhatOpen = app.getArgument(COSA_APRIRE_ARGUMENT);
+    console.log(WhatOpen);
     /*
     var request = require('xhr-request')
     request(Constants.DoorIp, {
