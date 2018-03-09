@@ -17,15 +17,14 @@ app.use(bodyParser());
 
 app.get('/', function (req, res) {
     console.log('GET /');
-    res.send('Door Opened!');
     
     if (Rele.readSync() === 0){
         Rele.writeSync(1);
+        res.send('Led On!');
     } else {
         Rele.writeSync(0);
+        res.send('Led Off!');
     }
-
-    console.log('Door Opened!');
 });
 
 app.post('/', function(req, res){
@@ -37,5 +36,5 @@ app.post('/', function(req, res){
 });
 
 app.listen(process.env.PORT || 3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('App listening on port 3000!');
 });
