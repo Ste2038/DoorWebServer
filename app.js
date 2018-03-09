@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
             console.log("C'è stato un errore, riprova!");
         }
     })
-    *
+    
     console.log('Door Opened!');
 });
 
