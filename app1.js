@@ -18,7 +18,7 @@ app.use(bodyParser());
 app.get('/', function (req, res) {
     console.log('GET /');
     console.log(Rele.readSync());
-    //Rele.writeSync(Rele.readSync());
+    res.send(Rele.readSync());
 });
 
 app.post('/', function(req, res){
