@@ -17,7 +17,11 @@ app.use(bodyParser());
 
 app.get('/', function (req, res) {
     console.log('GET /');
-    
+    Rele.writeSync(Rele.readSync());
+});
+
+app.post('/', function(req, res){
+    console.log('POST /');
     if (Rele.readSync() === 0){
         Rele.writeSync(1);
         res.send('Led On!');
@@ -25,14 +29,6 @@ app.get('/', function (req, res) {
         Rele.writeSync(0);
         res.send('Led Off!');
     }
-});
-
-app.post('/', function(req, res){
-    console.log('POST /');
-    res.send('Door Opened!');
-    
-
-    console.log('Door Opened!');
 });
 
 app.listen(process.env.PORT || 3000, function () {
