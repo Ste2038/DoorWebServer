@@ -6,7 +6,7 @@ var app = express();
 var app1 = connect();
 //process.env.DEBUG = 'actions-on-google:*';
 //const App = require('actions-on-google').DialogflowApp;
-//const Constants = require('./constants');
+const Constants = require('./constants');
 const COSA_APRIRE_ARGUMENT = 'CosaAprire'
 
 app.use(basicAuth({
@@ -18,7 +18,7 @@ app.use(bodyParser());
 app.get('/', function (req, res) {
     console.log('GET /');
     res.send('Door Opened!');
-    /*
+    
     var request = require('xhr-request')
     request(Constants.DoorIp, {
         method: Constants.DoorMethod,
@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
             console.log("C'è stato un errore, riprova!");
         }
     })
-    */
+    *
     console.log('Door Opened!');
 });
 
@@ -43,7 +43,7 @@ app.post('/', function(req, res){
 
     //let WhatOpen = app.getArgument(COSA_APRIRE_ARGUMENT);
     //onsole.log(WhatOpen);
-    /*
+    
     var request = require('xhr-request')
     request(Constants.DoorIp, {
         method: Constants.DoorMethod,
@@ -58,7 +58,7 @@ app.post('/', function(req, res){
             console.log("C'è stato un errore, riprova!");
         }
     })
-    */
+    
    console.log('Door Opened!');
 });
 
