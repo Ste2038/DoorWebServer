@@ -8,6 +8,8 @@ const Constants = require('./Constants');
 
 var Gpio = require('onoff').Gpio;
 var Rele = new Gpio(2, 'out');
+let status = "spento";
+Rele.writeSync(0);
 
 app.use(basicAuth({
     users: { 'admin': 'secret'}
@@ -18,8 +20,7 @@ app.use(bodyParser());
 app.get('/', function (req, res) {
     console.log('GET /');
     console.log(Rele.readSync());
-    let Status = Rele.readSync();
-    res.send(Status);
+    res.send(`Led ${status}!`);
 });
 
 app.post('/', function(req, res){
@@ -27,9 +28,11 @@ app.post('/', function(req, res){
     if (Rele.readSync() === 0){
         Rele.writeSync(1);
         res.send('Led On!');
+        status = "acceso";
     } else {
         Rele.writeSync(0);
         res.send('Led Off!');
+        status = "spento";
     }
 });
 
