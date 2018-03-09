@@ -6,7 +6,7 @@ var app = express();
 var app1 = connect();
 //process.env.DEBUG = 'actions-on-google:*';
 //const App = require('actions-on-google').DialogflowApp;
-const Constants = require('./constants');
+const Constants = require('./Constants');
 const COSA_APRIRE_ARGUMENT = 'CosaAprire'
 
 app.use(basicAuth({
